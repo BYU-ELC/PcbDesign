@@ -1,7 +1,7 @@
 {
     "author": {
-        "email": "michael.eyler@byu.edu",
-        "name": "michael eyler"
+        "email": "jarom77@gmail.com",
+        "name": "Jarom Christensen"
     },
     "description": {
         "EN": "EAGLE default 2 layer CAM job."
@@ -228,6 +228,50 @@
                     "name": "Silkscreen Bottom",
                     "polarity": "positive",
                     "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": false,
+                    "config": {
+                        "file_function": "Keep-out",
+                        "layer_type": "top"
+                    },
+                    "filename_format": "%PREFIX/rubout_bottom.gbr",
+                    "layers": [
+                        42
+                    ],
+                    "milling": false,
+                    "name": "Rubout Bottom",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
+                },
+                {
+                    "advanced_options": {
+                        "mirror": false,
+                        "offset_x": 0,
+                        "offset_y": 0,
+                        "rotate": false,
+                        "upside_down": false
+                    },
+                    "board_outline": false,
+                    "config": {
+                        "file_function": "Keep-out",
+                        "layer_type": "top"
+                    },
+                    "filename_format": "%PREFIX/rubout_top.gbr",
+                    "layers": [
+                        41
+                    ],
+                    "milling": false,
+                    "name": "Rubout Top",
+                    "polarity": "positive",
+                    "type": "gerber_layer"
                 }
             ],
             "version": "RS274X"
@@ -281,7 +325,7 @@
             ]
         }
     ],
-    "timestamp": "2022-02-10T15:58:34",
+    "timestamp": "2022-11-29T12:14:06",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "9.2.0"
