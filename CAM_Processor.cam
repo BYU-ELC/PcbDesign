@@ -4,7 +4,8 @@
         "name": "Jarom Christensen"
     },
     "description": {
-        "EN": "EAGLE default 2 layer CAM job."
+        "EN": "EAGLE 2-layer PCB job with optional rubout for BYU ECEn Shop",
+        "ES": "Archivo de EAGLE para producción de placa de circuito correspondiente al taller de engeniera eléctrica de BYU. Contiene especificaciones para quitar más cobre si se necesita."
     },
     "output_type": "zip",
     "outputs": [
@@ -325,7 +326,7 @@
             ]
         }
     ],
-    "timestamp": "2022-11-29T12:14:06",
+    "timestamp": "2023-01-09T15:00:15",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "9.2.0"
