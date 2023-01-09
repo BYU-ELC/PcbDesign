@@ -1,7 +1,7 @@
 {
     "author": {
-        "email": "michael.eyler@byu.edu",
-        "name": "michael eyler"
+        "email": "jarom77@gmail.com",
+        "name": "Jarom Christensen"
     },
     "description": {
         "EN": "EAGLE default 2 layer CAM job."
@@ -235,7 +235,7 @@
         {
             "filename_prefix": "CAMOutputs/DrillFiles",
             "format_specifier": {
-                "decimal": 3,
+                "decimal": 4,
                 "integer": 3
             },
             "output_type": "drill",
@@ -281,7 +281,7 @@
             ]
         }
     ],
-    "timestamp": "2022-02-10T15:58:34",
+    "timestamp": "2023-01-09T14:33:23",
     "type": "EAGLE CAM job",
     "units": "metric",
     "version": "9.2.0"
