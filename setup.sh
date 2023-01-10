@@ -29,11 +29,9 @@ for i in Cam Dru Lbr; do
 	sed -i 's/\(Directories\.'${i}' = "[^"]*\)/\1:\$HOME\/'${escapedPath}'/' $settings
 done
 
-# determine random time each hour
-second=$[$RANDOM % 60]
+# setup SSH script variables
 minute=$[$RANDOM % 60]
-croncmd="$second $minute */8 * * /usr/bin/git -C ~/$eagleRelPath pull"
-echo "$croncmd"
+croncmd="$minute */8 * * * /usr/bin/git -C ~/$eagleRelPath pull"
 
 # add git update to crontab
 if [ -e /caedm ]
@@ -50,7 +48,7 @@ then # running on caedm
 		-i $keyfile \
 		-o UserKnownHostsFile=/dev/null \
 		-o StrictHostKeyChecking=no \
-		"(crontab -l; echo \"$croncmd\") | crontab -"
+		"crontab -l || CRONTAB_NOHEADER=N; (crontab -l; echo \"$croncmd\") | crontab -"
 
 else # running on personal computer
 	(crontab -l; echo "$croncmd") | crontab -
