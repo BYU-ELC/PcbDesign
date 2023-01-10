@@ -6,7 +6,15 @@ Contains the following configuration files for the Brigham Young University Elec
  - EAGLE CAM Processor
  - EAGLE Design rules (for DRC)
 
-## Usage: Git
+## Easy Setup: Linux
+
+If you're using Linux, simply copy and paste the below command into a terminal and press enter. The script will download the necessary files and fix all Eagle settings. Make sure you have EAGLE intalled correctly before running this script. If EAGLE is running, close EAGLE before running this.
+
+`wget https://raw.githubusercontent.com/BYU-ELC/PcbDesign/readmeUpdates/setup.sh && bash setup.sh`
+
+If you didn't close EAGLE before running this script, make sure to close it and then open it again.
+
+## Manual Setup: Git
 
 It is easiest to use this repository by using git, which on Windows has to be installed. Linux and Mac usually come with git installed. You can find out by opening a terminal (or PowerShell for Windows) and typing `git version`. If it is not installed, [download it](git-scm.com/downloads). If using a computer without administrative privileges (a school computer), download the Portable or "thumbdrive edition".
 
@@ -24,7 +32,7 @@ It is easiest to use this repository by using git, which on Windows has to be in
 
 Every once in a while, navigate to the directory (`cd EAGLE/byuPCB`) and execute `git pull`. This will keep your version of the file up to date.
 
-## Usage: Download
+## Manual Setup: Download
 
 This method is easier, but you will have to do it every time you want to submit a board for production. Using Git is highly recommended, but this option is included for completeness.
 

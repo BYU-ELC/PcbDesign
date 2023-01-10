@@ -85,3 +85,7 @@ echo "
                      :^~!77??????77!~^:.
 
 "
+
+# remove script (it is usually downloaded standalone by users)
+rm $0
+
