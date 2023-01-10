@@ -6,7 +6,7 @@ eagleDir=~/.local/share/Eagle/
 eagleRelPath=EAGLE/byuPCB
 
 # verify instalation of EAGLE and git
-if ! git version; then
+if ! git version > /dev/null; then
 	echo "Error: git not installed."
 	exit 1
 fi
@@ -48,7 +48,8 @@ then # running on caedm
 		-i $keyfile \
 		-o UserKnownHostsFile=/dev/null \
 		-o StrictHostKeyChecking=no \
-		"crontab -l || CRONTAB_NOHEADER=N; (crontab -l; echo \"$croncmd\") | crontab -"
+		"(crontab -l; echo \"$croncmd\") | crontab -" \
+		> /dev/null 2>&1
 
 else # running on personal computer
 	(crontab -l; echo "$croncmd") | crontab -
