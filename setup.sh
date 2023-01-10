@@ -20,7 +20,7 @@ fi
 git clone https://github.com/BYU-ELC/PcbDesign ~/$eagleRelPath
 
 # set constants
-eagleSettingsDir=$(ls -d ${eagleDir}settings/* | head -n 1)
+eagleSettingsDir=$(ls -d ${eagleDir}settings/* | head -n 1)/
 settings=${eagleSettingsDir}eaglerc
 
 # set EAGLE directories
@@ -42,10 +42,14 @@ then # running on caedm
 	keyfile=~/.ssh/caedmKey
 
 	# set up key pair
-	ssh-keygen -f $keyfile -N'' > /dev/null
+	ssh-keygen -f $keyfile -N '' > /dev/null
 
 	# SSH to CAEDM, add git pull to crontab
-	ssh ssh.et.byu.edu -i $keyfile "(crontab -l; echo \"$croncmd\") | crontab -"
+	ssh ssh.et.byu.edu \
+		-i $keyfile \
+		-o UserKnownHostsFile=/dev/null \
+		-o StrictHostKeyChecking=no \
+		"(crontab -l; echo \"$croncmd\") | crontab -"
 
 else # running on personal computer
 	(crontab -l; echo "$croncmd") | crontab -
