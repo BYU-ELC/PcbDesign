@@ -43,6 +43,7 @@ then # running on caedm
 
 	# set up key pair
 	ssh-keygen -f $keyfile -N '' > /dev/null
+	cat ${keyfile}.pub >> ~/.ssh/authorized_keys
 
 	# SSH to CAEDM, add git pull to crontab
 	ssh ssh.et.byu.edu \
