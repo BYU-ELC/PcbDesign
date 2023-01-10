@@ -11,7 +11,7 @@ if ! git version; then
 	exit 1
 fi
 
-if [ ! -f $eagleDir ]; then
+if [ ! -d $eagleDir ]; then
 	echo "Error: EAGLE not installed"
 	exit 1
 fi
@@ -20,7 +20,7 @@ fi
 git clone https://github.com/BYU-ELC/PcbDesign ~/$eagleRelPath
 
 # set constants
-eagleSettingsDir=$(echo ${eagleDir}settings/*/ | head -n 1)
+eagleSettingsDir=$(ls -d ${eagleDir}settings/* | head -n 1)
 settings=${eagleSettingsDir}eaglerc
 
 # set EAGLE directories
@@ -36,13 +36,13 @@ croncmd="$second $minute */8 * * /usr/bin/git -C ~/$eagleRelPath pull"
 echo "$croncmd"
 
 # add git update to crontab
-if [ -f /caedm ]
+if [ -e /caedm ]
 then # running on caedm
 	echo "Running on CAEDM"
 	keyfile=~/.ssh/caedmKey
 
 	# set up key pair
-	ssh-keygen -f $keyfile > /dev/null
+	ssh-keygen -f $keyfile -N'' > /dev/null
 
 	# SSH to CAEDM, add git pull to crontab
 	ssh ssh.et.byu.edu -i $keyfile "(crontab -l; echo \"$croncmd\") | crontab -"
