@@ -18,6 +18,7 @@ fi
 
 # clone repository, exit if already exists
 git clone https://github.com/BYU-ELC/PcbDesign ~/$eagleRelPath || exit 1
+echo
 
 # set constants
 eagleSettingsDir=$(ls -d ${eagleDir}settings/* | head -n 1)/
@@ -26,6 +27,7 @@ settings=${eagleSettingsDir}eaglerc
 # set EAGLE directories
 escapedPath=$(echo $eagleRelPath | sed 's/\//\\\//g')
 for i in Cam Dru Lbr; do
+	grep -c 'Directories\.'${i}' = .*\$HOME\/'${escapedPath} $settings > /dev/null && \
 	sed -i 's/\(Directories\.'${i}' = "[^"]*\)/\1:\$HOME\/'${escapedPath}'/' $settings
 done
 
