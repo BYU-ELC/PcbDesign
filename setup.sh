@@ -27,7 +27,7 @@ settings=${eagleSettingsDir}eaglerc
 # set EAGLE directories
 escapedPath=$(echo $eagleRelPath | sed 's/\//\\\//g')
 for i in Cam Dru Lbr; do
-	grep -c 'Directories\.'${i}' = .*\$HOME\/'${escapedPath} $settings > /dev/null && \
+	grep -c 'Directories\.'${i}' = .*\$HOME\/'${escapedPath} $settings > /dev/null || \
 	sed -i 's/\(Directories\.'${i}' = "[^"]*\)/\1:\$HOME\/'${escapedPath}'/' $settings
 done
 
