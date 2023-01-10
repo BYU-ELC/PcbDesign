@@ -8,12 +8,12 @@ eagleRelPath=EAGLE/byuPCB
 # verify instalation of EAGLE and git
 if ! git version; then
 	echo "Error: git not installed."
-	return 1
+	exit 1
 fi
 
 if [ ! -f $eagleDir ]; then
 	echo "Error: EAGLE not installed"
-	return 1
+	exit 1
 fi
 
 # clone repository
@@ -25,18 +25,18 @@ settings=${eagleSettingsDir}eaglerc
 
 # set EAGLE directories
 escapedPath=$(echo $eagleRelPath | sed 's/\//\\\//g')
-sed -i "s/(Directories\.Cam = .*)/\1:\$HOME\/${escapedPath}/" $settings
-sed -i "s/(Directories\.Dru = .*)/\1:\$HOME\/${escapedPath}/" $settings
-sed -i "s/(Directories\.Lbr = .*)/\1:\$HOME\/${escapedPath}/" $settings
+sed -i 's/\(Directories\.Cam = [^"]*\)/\1:\$HOME\/'${escapedPath}'/' $settings
 
 # determine random time each hour
 second=$[$RANDOM % 60]
 minute=$[$RANDOM % 60]
 croncmd="$second $minute */8 * * /usr/bin/git -C ~/$eagleRelPath pull"
+echo "$croncmd"
 
 # add git update to crontab
 if [ -f /caedm ]
 then # running on caedm
+	echo "Running on CAEDM"
 	keyfile=~/.ssh/caedmKey
 
 	# set up key pair
