@@ -60,3 +60,26 @@ then # running on caedm
 else # running on personal computer
 	(crontab -l; echo "$croncmd") | crontab -
 fi
+
+echo "Setup complete."
+echo "
+
+
+                .  .:~!7?J7          :^:.  .
+             .~7YPGB#####&G.         5##BG5J7^.
+         .~JPB#########G55Y.        .PBB######BP?^
+       .YB#############B?.           ..^5#########B?
+        ^5#BY7Y##########G7           !P####G7!YG#Y:
+          ~.   ~5##########P!       ^5####B?.   .^
+                 ~P##########5~   :Y#####Y:
+                   !P##########Y^?B####P~
+                    .7G##############G!
+                      .?G##########B?.
+                        .P########G:
+                         Y########P
+                     ... Y########P...:
+                    .PBGPB########BPGB#7
+                    !##################P.
+                     :^~!77??????77!~^:.
+
+"
