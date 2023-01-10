@@ -16,8 +16,8 @@ if [ ! -d $eagleDir ]; then
 	exit 1
 fi
 
-# clone repository
-git clone https://github.com/BYU-ELC/PcbDesign ~/$eagleRelPath
+# clone repository, exit if already exists
+git clone https://github.com/BYU-ELC/PcbDesign ~/$eagleRelPath || exit 1
 
 # set constants
 eagleSettingsDir=$(ls -d ${eagleDir}settings/* | head -n 1)/
@@ -37,7 +37,13 @@ croncmd="$minute */8 * * * /usr/bin/git -C ~/$eagleRelPath pull"
 if [ -e /caedm ]
 then # running on caedm
 	echo "Running on CAEDM"
-	keyfile=~/.ssh/caedmKey
+	keyfile=~/.ssh/pcb_caedmKey
+
+	# exit if keyfile already exists
+	if [ -f $keyfile ]; then
+		echo "SSH key already exists; assuming script has already been run. Exiting."
+		exit 0
+	fi
 
 	# set up key pair
 	ssh-keygen -f $keyfile -N '' > /dev/null
