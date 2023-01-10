@@ -25,7 +25,9 @@ settings=${eagleSettingsDir}eaglerc
 
 # set EAGLE directories
 escapedPath=$(echo $eagleRelPath | sed 's/\//\\\//g')
-sed -i 's/\(Directories\.Cam = [^"]*\)/\1:\$HOME\/'${escapedPath}'/' $settings
+for i in Cam Dru Lbr; do
+	sed -i 's/\(Directories\.'${i}' = "[^"]*\)/\1:\$HOME\/'${escapedPath}'/' $settings
+done
 
 # determine random time each hour
 second=$[$RANDOM % 60]
