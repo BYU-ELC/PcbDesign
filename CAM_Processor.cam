@@ -12,7 +12,7 @@
         {
             "filename_prefix": "CAMOutputs/GerberFiles",
             "format_specifier": {
-                "decimal": 4,
+                "decimal": 3,
                 "integer": 3
             },
             "generate_job_file": true,
