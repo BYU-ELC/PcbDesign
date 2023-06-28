@@ -1,3 +1,5 @@
+# BYU ECEn Shop KiCAD Generation Files
+
 1) Navigate to "Fabrication Outputs"
 2) Gerbers (.gbr)
 3) Click the folder Icon in the top right of the pop-up
