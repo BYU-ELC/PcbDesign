@@ -1,6 +1,6 @@
 # BYU ECEn Shop KiCAD Design Rules
 
-## 5 steps to importing Design Rules (Assuming you donloaded this Repository)
+## 5 steps to importing Design Rules (Assuming you downloaded this Repository)
  ***Note*** *that these steps and images were generated on a windows machine and could vary slightly dependent upon user OS*
 
 1. While in the PCB layout page, find the "Edit board setup including layers, design rules, and various defaults" button. It should be in the top left. It is green and has a red gear on it. ![Image for step 1](./How%20to%20import%20Rules%20from%20Another%20Project/Step%201.png)
