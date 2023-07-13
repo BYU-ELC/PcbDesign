@@ -1,6 +1,6 @@
 # BYU ECEn Shop KiCAD Design Rules
 
-KiCAD does not have a ".DRC" or a ".RUL" like EAgle and Altium, respectively. Instead we have provided a sample KiCAD 7.0 Project and board to utilize the "Copy Rules from Another Board" Feature. Alternatively, we will shortly be providing a table with all the information and you can type this in yourself, similar to this one from [OSHPARK]{:target="_blank"}(https://docs.oshpark.com/design-tools/kicad/kicad-design-rules/). Which can also serve as a guide if you wish to know more about PCB constraints in general.
+KiCAD does not have a ".DRC" or a ".RUL" like EAgle and Altium, respectively. Instead we have provided a sample KiCAD 7.0 Project and board to utilize the "Copy Rules from Another Board" Feature. Alternatively, we will shortly be providing a table with all the information and you can type this in yourself, similar to this one from [OSHPARK](https://docs.oshpark.com/design-tools/kicad/kicad-design-rules/){:target="_blank"}. Which can also serve as a guide if you wish to know more about PCB constraints in general.
 
 ## 5 steps to importing Design Rules (Assuming you downloaded this Repository)
  ***Note*** *that these steps and images were generated on a windows machine and could vary slightly dependent upon user OS*
