@@ -1,0 +1,28 @@
+(version 1)
+
+#No traces smaller than 12mil, Optimal trace width 20mil
+(rule "Minimum Trace Width 12 mil"
+	(constraint track_width (min 12mil) (opt 20mil)))
+
+#VIA RULES
+(rule "Minimum via diamter 0.8mm"
+	(constraint via_diameter (min 0.8mm) (opt 1.2mm)))
+
+#Minimum Drill Diameter
+(rule "Minimum Drill 0.3 mm"
+	(constraint hole_size (min 0.3mm) (opt 0.6mm)))
+
+(rule "Minimum Thermal spoke width 10 mil"
+	(constraint thermal_spoke_width (min 10mil)))
+
+(rule "Minimum Thermal Clearance 0.25mm"
+	(constraint thermal_relief_gap (min 0.25mm)))
+
+#CLEARANCE
+(rule "Minimum Clearance 12 mil"
+	(constraint clearance (min 12mil)))
+(rule "SilkScreen Clearance Optimally 12mil"
+	(constraint silk_clearance (opt 12mil)))
+(rule "Hole to Hole, and Hole to net Clearance 12mil"
+	(constraint hole_clearance (min 12mil))
+	(constraint hole_to_hole (min 12mil)))
