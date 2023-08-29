@@ -20,7 +20,7 @@
 
 #CLEARANCE
 (rule "Minimum Clearance 12 mil"
-	(constraint clearance (min 12mil)))
+	(constraint clearance (min 12mil) (opt 0.2mm) (max 0.3mm)))
 (rule "SilkScreen Clearance Optimally 12mil"
 	(constraint silk_clearance (opt 12mil)))
 (rule "Hole to Hole, and Hole to net Clearance 12mil"
