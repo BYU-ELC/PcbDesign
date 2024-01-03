@@ -32,7 +32,7 @@ This method is easier, but you will have to do it every time you want to submit 
 2. Click on the green "Code" button, then "Download ZIP"
 3. Extract the files from the folder
 
-(Below is eagle specific.)
+(Below this line is eagle specific.)
 
 4. To use the library, click on the "Open library manager" (3 books) button at the top, click on the "In Use" tab, and select "Browse..." and find and select the .lbr file that was extracted.
 5. When running the DRC, click "Load", and then find and select the .dru file that was extracted.
