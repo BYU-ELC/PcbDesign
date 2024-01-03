@@ -31,7 +31,9 @@ This method is easier, but you will have to do it every time you want to submit 
 1. Open a browser and navigate to [https://github.com/BYU-ELC/PcbDesign](https://github.com/BYU-ELC/PcbDesign).
 2. Click on the green "Code" button, then "Download ZIP"
 3. Extract the files from the folder
+
 (Below is eagle specific.)
+
 4. To use the library, click on the "Open library manager" (3 books) button at the top, click on the "In Use" tab, and select "Browse..." and find and select the .lbr file that was extracted.
 5. When running the DRC, click "Load", and then find and select the .dru file that was extracted.
 6. When running the CAM Processor, click the "Load job file" button at the top (paper with an arrow) and then "Open CAM File...". Find the .cam file that was extracted.
