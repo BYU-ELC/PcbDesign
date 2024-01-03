@@ -1,18 +1,16 @@
-# BYU ECEn Shop EAGLE Files
+# BYU ECEn Shop PCB Files
+## Altium, KiCad, Eagle
 
 Contains the following configuration files for the Brigham Young University Electrical and Computer Engineering Shop:
 
  - Shop parts library
  - EAGLE CAM Processor
  - EAGLE Design rules (for DRC)
+ - Altium *.RUL file (WIP)
+ - Altium Export Proccess
+ - KiCad Design Rules Project
+ - KiCad Export Proccess
 
-## Easy Setup: Linux
-
-If you're using Linux, simply copy and paste the below command into a terminal and press enter. The script will download the necessary files and fix all Eagle settings. Make sure you have EAGLE intalled correctly before running this script. If EAGLE is running, close EAGLE before running this.
-
-`wget https://raw.githubusercontent.com/BYU-ELC/PcbDesign/readmeUpdates/setup.sh && bash setup.sh`
-
-If you didn't close EAGLE before running this script, make sure to close it and then open it again.
 
 ## Manual Setup: Git
 
@@ -20,17 +18,11 @@ It is easiest to use this repository by using git, which on Windows has to be in
 
 1. Open a terminal (Ctrl+Alt+T on Linux, PowerShell on Windows).
 2. Run `git version`. If an error occurs, follow the instructions in the above paragraph to download git.
-3. Run `cd EAGLE`
+3. Navigate to where you want to download the repository using the `cd` command
 4. Run `git clone https://github.com/BYU-ELC/PcbDesign byuPCB`
-5. Open EAGLE
-6. Click on the "Options" tab and select "Directories..." from the list
-7. Add ":$HOME/EAGLE/byuPCB" to the end of each of the following fields. On Windows, replace the colon with a semicolon. (Ex: change _$HOME/EAGLE/libraries_ to _$HOME/EAGLE/libraries:$HOME/EAGLE/byuPCB_)
- - Libraries
- - Design Rules
- - CAM Jobs
-8. After verifying that the above fields have been correctly changed, click OK.
+5. Now when running your PCB design software, make sure to navigate here when checking design rules or exporting to .gbr files
 
-Every once in a while, navigate to the directory (`cd EAGLE/byuPCB`) and execute `git pull`. This will keep your version of the file up to date.
+Every once in a while, navigate to the directory chossen for download and execute `git pull`. This will keep your version of the file up to date.
 
 ## Manual Setup: Download
 
@@ -39,9 +31,10 @@ This method is easier, but you will have to do it every time you want to submit 
 1. Open a browser and navigate to [https://github.com/BYU-ELC/PcbDesign](https://github.com/BYU-ELC/PcbDesign).
 2. Click on the green "Code" button, then "Download ZIP"
 3. Extract the files from the folder
+(Below is eagle specific.)
 4. To use the library, click on the "Open library manager" (3 books) button at the top, click on the "In Use" tab, and select "Browse..." and find and select the .lbr file that was extracted.
-4. When running the DRC, click "Load", and then find and select the .dru file that was extracted.
-5. When running the CAM Processor, click the "Load job file" button at the top (paper with an arrow) and then "Open CAM File...". Find the .cam file that was extracted.
+5. When running the DRC, click "Load", and then find and select the .dru file that was extracted.
+6. When running the CAM Processor, click the "Load job file" button at the top (paper with an arrow) and then "Open CAM File...". Find the .cam file that was extracted.
 
 > Remember, the file will have to be downloaded new each time it is used so that all updates will be available.
 
